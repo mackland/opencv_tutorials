@@ -54,6 +54,9 @@ dst = dst[y:y+h, x:x+w]
 cv2.imwrite('calibresult.png',dst)
 print 'saved calibrated image'
 
+np.savez('B.npz',ret=ret,mtx=mtx,dist=dist,rvecs=rvecs,tvecs=tvecs)
+
+print 'test kor'
 #mean_error = 0
 #for i in xrange(len(objpoints)):
 #	imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], mtx, dist)
